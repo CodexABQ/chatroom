@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Year's Celebration Chat</title>
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Lottie -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.9.6/lottie.min.js"></script>
+    <!-- Socket.IO -->
+    <script src="/socket.io/socket.io.js"></script>
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <!-- Preloader -->
+    <div class="preloader">
+        <div id="preloader-animation"></div>
+        <div class="loading-text">Loading the celebration...</div>
+    </div>
+
+    <!-- Join Screen -->
+    <div class="join-screen" id="joinScreen">
+        <div class="join-container">
+            <div class="fireworks-animation" id="fireworksAnimation"></div>
+            <h1>Join the New Year's Chat! 🎉</h1>
+            <div class="join-form">
+                <div class="input-group">
+                    <label for="username">Display Name</label>
+                    <input type="text" id="username" placeholder="Enter your name" maxlength="20">
+                </div>
+                
+                <div class="avatar-selection">
+                    <label>Choose Your Avatar</label>
+                    <div class="avatar-grid" id="avatarGrid">
+                        <!-- Avatars will be inserted by JavaScript -->
+                    </div>
+                </div>
+
+                <button id="joinButton" class="join-button">
+                    <span>Join the Celebration</span>
+                    <div class="button-particles"></div>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Chat Room -->
+    <div class="chat-screen hidden" id="chatScreen">
+        <div class="chat-container">
+            <!-- Header -->
+            <div class="chat-header">
+                <div class="celebration-info">
+                    <h2>New Year's Chat</h2>
+                    <div class="online-count">
+                        <span id="onlineCount">0</span> celebrating
+                    </div>
+                </div>
+                <div class="theme-toggle">
+                    <button id="themeToggle" aria-label="Toggle theme">
+                        <i class="moon">🌙</i>
+                        <i class="sun">☀️</i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Messages Area -->
+            <div class="chat-messages" id="chatMessages">
+                <div class="welcome-banner">
+                    <div id="welcomeAnimation"></div>
+                    <h3>Welcome to the celebration! 🎊</h3>
+                    <p>Share your New Year's wishes with everyone!</p>
+                </div>
+                <!-- Messages will be inserted here -->
+            </div>
+
+            <!-- Input Area -->
+            <div class="chat-input">
+                <div class="input-wrapper">
+                    <input type="text" id="messageInput" placeholder="Type your message...">
+                    <button id="emojiButton" class="emoji-button">😊</button>
+                    <button id="sendButton" class="send-button">
+                        <span>Send</span>
+                        <div class="send-icon">🎈</div>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Active Users Sidebar -->
+        <div class="active-users">
+            <h3>Celebrating Together</h3>
+            <div class="users-list" id="usersList">
+                <!-- Active users will be inserted here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Emoji Picker (Hidden by default) -->
+    <div class="emoji-picker hidden" id="emojiPicker">
+        <!-- Emojis will be inserted by JavaScript -->
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/preloader.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/chat.js"></script>
+</body>
+</html>
